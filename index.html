@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+    h1,h3{
+        text-align: center;
+        color: #003366;
+
+    }
+
+    label {
+        font-size: 24px;
+    }
+
+    input {
+        padding: 5px;
+        border-radius: 5px;
+        /* outline: none; */
+        border: 2px solid gray;
+        margin-left: 16px;
+        font-size: 18px;
+    }
+
+    input:focus {
+        background-color: #5aa280;
+        color: black;
+    }
+
+    .inp {
+        padding: 16px 0;
+    }
+
+    .btnClick {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 5px 10px;
+        background-color: green;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        margin-top: 16px;
+    }
+
+    .inputBox {
+        width: max-content;
+        margin: 40px auto;
+        padding: 16px;
+        background-color: #c6baba;
+        box-shadow: 5px 5px 10px #b7bc7f;
+
+    }
+</style>
+
+<body>
+
+    <div class="container">
+
+        <div class="inputBox">
+
+            <h1>Billing list</h1>
+
+            <div class="inp">
+                <label for="text1">Enter your amount :</label>
+                <input type="number" id="text1" value="" placeholder="Enter your amount" >
+            </div>
+
+            <div class="inp">
+                <label for="text2">Enter your tip amount in % :</label>
+                <input type="number" id="text2" value="" placeholder="Enter your tip amount ">
+            </div>
+
+            <div class="inp">
+                <label for="text3">Your discount amount in Rs :</label>
+                <input type="text" id="text3" value="" placeholder="your tip amount after click" disabled>
+            </div>
+
+            <div class="inp">
+                <label for="text4">Your total amount :</label>
+                <input type="text" id="text4" value="" placeholder="your total amount after click" disabled>
+            </div>
+
+            <div class=" btnClick">
+                <button id="btn">Click</button>
+            </div>
+
+            <h3>Thanks for comming`</h3>
+
+        </div>
+
+    </div>
+
+    <script>
+
+
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", function (e) {
+            // e.preventDefault() 
+
+            let inp1 = document.getElementById("text1").value
+            let inp2 = document.getElementById("text2").value
+            let inp3 = document.getElementById("text3")
+            let inp4 = document.getElementById("text4")
+
+
+            let disValue = Number((inp2 / 100) * inp1);
+            let totalAns = Number(Number(inp1) + disValue);
+
+            inp3.value = disValue;
+            inp4.value = totalAns;
+
+        })
+
+
+        /*
+        let btn = document.getElementById("btn");
+ 
+        btn.addEventListener("click", funName)
+        function funName(e) {
+            e.preventDefault()
+ 
+            let inp1 = document.getElementById("text1").value
+            let inp2 = document.getElementById("text2").value
+ 
+            let disValue = (inp2 / inp1) * 100;
+            let totalAns = inp1 + disValue;
+ 
+          //  console.log(disValue);
+ 
+            document.getElementById(text3).value = disValue;
+            document.getElementById(text4).value = totalAns;
+ 
+ 
+        }
+        */
+
+
+    </script>
+
+
+
+</body>
+
+</html>
